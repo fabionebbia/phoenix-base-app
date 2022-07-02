@@ -20,6 +20,10 @@ WORKDIR /app
 RUN mix deps.get
 RUN npm install --prefix ./assets
 
+# Exposing Phoenix port
 EXPOSE 4000
+
+# Exposing PostgreSQL port - just for debugging purposes
+EXPOSE 5432
 
 CMD ["/app/entrypoint.sh"]
